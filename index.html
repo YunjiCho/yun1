@@ -54,7 +54,7 @@
       .intention {
         position: absolute;
         top: 895px;
-        left: 605px;
+        left: 630px;
         color: black;
         font-family: "Nanum Myeongjo", serif;
       }
@@ -66,7 +66,7 @@
       .item .overlay {
         position: absolute;
         color: rgb(0, 0, 0);
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-family: "Helvetica";
         font-weight: bold;
       }
@@ -160,6 +160,11 @@
           const originalColor = overlay.getAttribute("data-color"); // 추가
           overlay.style.color = data - color;
         });
+      });
+      overlays.forEach(function (element, index, array) {
+        var newX =
+          index < array.length / 2 ? (index + 1) * 30 : (index + 1) * -30 + 300;
+        element.style.left = newX + "px";
       });
 
       window.addEventListener("mousemove", function (e) {
